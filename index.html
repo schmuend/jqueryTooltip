@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript">
+	// Executes the function when DOM will be loaded fully
+	$(document).ready(
+			function() {
+				$(document).tooltip(
+						{
+							track : true,
+							items : "img",
+							content : function() {
+								var element = $(this);
+								if (element.is("img")) {
+									//return element.attr( "href" );
+									return "<img class='map' src='"
+											+ element.attr("alt") + "'>";
+								}
+							}
+						});
+			});
+</script>
+
+<style type="text/css">
+
+/* Giving a font-family and Size to give good look */
+body {
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial,
+		Verdana, sans-serif;
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial,
+		Verdana, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+}
+
+.map {
+	width: 600px;
+	height: 600px;
+	padding-left: 100px;
+}
+</style>
+
+</head>
+<body>
+
+	<div class="ui-widget photo">
+		<div class="ui-widget-header ui-corner-all" style="border: 1px solid;">
+			<h2>Tower Bridge</h2>
+			<a href="large.jpg"><img src="small.jpg" alt="large.jpg" width="100px" height="100px"
+				class="ui-corner-all" />
+			</a>
+		</div>
+	</div>
+
+</body>
+</html>
